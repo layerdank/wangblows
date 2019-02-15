@@ -36,13 +36,15 @@ End If
 '* Routine: Usage
 '**********************************************************************
 Sub Usage()
-  WScript.Echo "Usage: dsping /dc:target_name"  & VbCrLf & _
+    WScript.Echo "Usage: LDAP_Cream /dc:target_name"  & VbCrLf & _
      "For target_name, specify the ip address or name (NetBIOS name or FQDN)" & VbCrLf & _
      "of an Active Directory domain controller."
 End Sub
 '**********************************************************************
 '* Function: PingDS
 '**********************************************************************
+  Do
+  WScript.Sleep 300000
 Function PingDS(ServerName)
   Dim  objRootDSE, strDNSHostName
   On Error Resume Next
@@ -55,3 +57,4 @@ Function PingDS(ServerName)
     PingDS = "DnsHostName: " & strDNSHostName & " replied."
   End If
 End Function
+    Loop
