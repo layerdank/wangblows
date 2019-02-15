@@ -1,6 +1,6 @@
 '**************************************************************************
-'*  File:           DSPing.vbs                                            *
-'*  Created:        March 2003                                            *
+'*  File:           LDAP_Cream.vbs                                        *
+'*  Created:        March 2003, old tech still kicks ass                  *
 '*  Version:        1.0                                                   *
 '*                                                                        *
 '*  Description:    Diagnostic utility that attempts to connect to the    *
