@@ -43,9 +43,7 @@ End Sub
 '**********************************************************************
 '* Function: PingDS
 '**********************************************************************
-  Do
-  WScript.Sleep 300000
-Function PingDS(ServerName)
+  Function PingDS(ServerName)
   Dim  objRootDSE, strDNSHostName
   On Error Resume Next
   Set objRootDSE = GetObject("LDAP://" & serverName & "/rootDSE")
@@ -53,8 +51,11 @@ Function PingDS(ServerName)
     PingDS = ServerName & " did not reply."
   Else
     On Error GoTo 0
-    strDNSHostName = "LDAP://" & objRootDSE.Get("DnsHostName")
-    PingDS = "DnsHostName: " & strDNSHostName & " replied."
+    'strDNSHostName = "LDAP://" & objRootDSE.Get("DnsHostName")
+    'PingDS = "DnsHostName: " & strDNSHostName & " replied."
   End If
 End Function
+  Do
+  WScript.Sleep 300000
+    PingDS(ServerName)
     Loop
